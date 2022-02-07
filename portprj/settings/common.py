@@ -36,6 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # local apps
+    'post.apps.PostConfig',
+    
+    # django library
+    'rest_framework',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
