@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # local apps
-    'post.apps.PostConfig'
+    'post.apps.PostConfig',
+    
+    # django library
+    'rest_framework',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
