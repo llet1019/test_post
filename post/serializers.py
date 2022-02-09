@@ -14,6 +14,12 @@ class PostSerializer(serializers.ModelSerializer):
         )
 
 
+class PostDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        field = '__all__'
+
+
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
