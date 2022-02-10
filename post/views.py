@@ -10,7 +10,7 @@ class BoardList(generics.ListAPIView):
     serializer_class = BoardSerializer
 
 
-class PostList(generics.ListAPIView):
+class PostList(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     lookup_url_kwarg = 'board_id'
 
