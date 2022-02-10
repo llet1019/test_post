@@ -10,6 +10,7 @@ class PostSerializer(serializers.ModelSerializer):
             'user',
             'title',
             'view_count',
+            'board',
             'created_at'
         )
 
