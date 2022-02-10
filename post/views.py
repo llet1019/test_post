@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from rest_framework import generics
 
 from .serializers import BoardSerializer, PostSerializer, PostDetailSerializer
@@ -22,7 +23,9 @@ class PostList(generics.ListCreateAPIView):
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostDetailSerializer
     lookup_url_kwarg = 'post_id'
+    lookup_board = 'board_id'
 
     def get_queryset(self):
         post_id = self.kwargs.get(self.lookup_url_kwarg)
-        return Post.objects.filter(id=post_id)
+        board_id = self.kwargs.get(self.lookup_board)
+        return Post.objects.filter(Q(board__id=board_id)&Q(id=post_id))
